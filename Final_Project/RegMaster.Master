@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RegMaster.master.cs" Inherits="Final_Project.RegMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Student Management Portal</title>
+
+    <%--jquery references--%>
+    <link rel="stylesheet" href="Content/themes/base/jquery-ui.css" />
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .auto-style1 {
+            float: left;
+            font-weight:bold;
+            font-size:medium;
+        }
+    </style>
+
+</head>
+<body style="height: 469px">
+    <form id="form1" runat="server">
+            
+                <div style="font-family: Verdana, Geneva, Tahoma, sans-serif; line-height: normal; background-color: #FFFFFF; color: #000000; border-style: solid; border-color: #FFFFFF; padding: 1px; margin: 5px; float: left; list-style-type: disc; font-weight: bold; font-size: medium;" class="auto-style1">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+               
+           <br />
+        <br />
+         <br />
+        <br />
+            <div style="font-family: Verdana, Geneva, Tahoma, sans-serif; line-height: normal; background-color: #FFFFFF; color: #000000; border-style: solid; border-color: #FFFFFF; padding: 1px; margin: 5px; list-style-type: disc" class="auto-style1">
+                <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick" BackColor="#000066" CssClass="ui-menu" DynamicTopSeparatorImageUrl="~/Content/themes/base/images/ui-icons_ffffff_256x240.png" Font-Bold="True" Font-Size="Medium" ForeColor="White" Orientation="Horizontal" StaticSubMenuIndent="16px">
+                    <DynamicItemTemplate>
+                        <%# Eval("Text") %>
+                    </DynamicItemTemplate>
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Login.aspx" Text="Login" Value="Login"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Classes.aspx" Text="Classes" Value="Classes"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Register.aspx" Text="Register" Value="Register"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/NewLogin.aspx" Text="Request New Login" Value="Request New Login"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/MyClasses.aspx" Text="My Classes" Value="My Classes"></asp:MenuItem>
+                    </Items>
+
+                    <StaticMenuItemStyle HorizontalPadding="10px" />
+
+                </asp:Menu>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                     </asp:ContentPlaceHolder>
+                <br />
+
+            </div>
+    </form>
+</body>
+</html>
